@@ -8,8 +8,8 @@ This dataset contains textual descriptions and technical specifications of servi
 
 ### Data Sources
 - **Real Product Data (697 entries)**:
-  - 239 product descriptions from 30+ service robot manufacturers including Ecovacs, Roborock, PuduTech, Keenon, UBTECH, and others
-  - 458 service robot module product descriptions from RobotShop platform using the search keyword "Service robot module"
+  - **Service Robot Products (239 entries)**: Complete robot systems from 30+ manufacturers including Ecovacs, Roborock, PuduTech, Keenon, UBTECH, and others
+  - **Service Robot Modules (458 entries)**: Component modules from RobotShop platform that can be integrated into service robots
   
 - **Generated Supplement Data (1,393 entries)**:
   - Generated using GLM-4-Plus API to enrich data diversity and parameter variations
@@ -21,33 +21,63 @@ This dataset contains textual descriptions and technical specifications of servi
 4. Parameter extraction and structured organization
 5. Supplementation with generated data to enhance diversity
 
-## Data Structure
+## Example Entries
 
-Each entry in the dataset is formatted as a JSON object with the following structure:
-
+### Service Robot Product Example
 ```json
 {
   "basic_info": {
-    "name": "Robot Name",
-    "manufacturer": "Manufacturer Name",
-    "description": "Detailed description of the robot"
+    "name": "豹小秘2",
+    "manufacturer": "猎户星空",
+    "description": "猎户星空推出的豹小秘2是一款高性能AI语音交互服务机器人..."
   },
   "parameters": {
-    "parameter1": "value1",
-    "parameter2": {
-      "value": 100,
-      "unit": "kg"
-    }
-    // Other technical specifications
+    "整机尺寸": {
+      "value": {
+        "length": 558,
+        "width": 525,
+        "height": 1350
+      },
+      "unit": "mm"
+    },
+    // 其他参数...
   },
   "functions": {
-    "perception": ["sensor1", "sensor2"],
-    "execution": ["function1", "function2"],
-    "interaction": ["interaction1", "interaction2"],
-    "navigation": ["navigation1", "navigation2"]
+    "interaction": [
+      "智能咨询",
+      "迎宾接待",
+      "问路引领"
+    ],
+    // 其他功能...
   },
-  "scenes": ["scene1", "scene2"], // Application scenarios
-  "identified_noise": [] // Flags for partial or noisy entries
+  "scenes": [
+    "政务讲解员",
+    "企业讲解员"
+    // 其他场景...
+  ]
+}
+{
+  "basic_info": {
+    "name": "数字扬声器模块",
+    "manufacturer": "Unknown",
+    "description": "数字扬声器模块，适用于2.0-5.5V电压范围..."
+  },
+  "parameters": {
+    "工作电压": {
+      "value": {
+        "min": 2.0,
+        "max": 5.5
+      },
+      "unit": "V"
+    },
+    // 其他参数...
+  },
+  "functions": {
+    "execution": [
+      "可用作蜂鸣器",
+      "播放高质量音频"
+    ]
+  }
 }
 ```
 
