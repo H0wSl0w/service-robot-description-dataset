@@ -168,23 +168,6 @@ This dataset can be used for various research purposes including:
 4. Generating descriptions for new robotic systems
 5. Studying the relationship between robot features and application domains
 
-### Loading the dataset in Python:
-
-```python
-import json
-
-# Load the entire dataset
-with open('service_robot_dataset.json', 'r', encoding='utf-8') as f:
-    robot_data = json.load(f)
-
-# Example: Filter robots by manufacturer
-def filter_by_manufacturer(data, manufacturer):
-    return [item for item in data if item['basic_info']['manufacturer'].lower() == manufacturer.lower()]
-
-# Example: Analyze robots by function
-def get_robots_with_function(data, function_type, function_name):
-    return [item for item in data if function_name in item['functions'].get(function_type, [])]
-```
 
 ## Citation
 
