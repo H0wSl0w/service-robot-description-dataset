@@ -27,57 +27,134 @@ This dataset contains textual descriptions and technical specifications of servi
 ```json
 {
   "basic_info": {
-    "name": "豹小秘2",
-    "manufacturer": "猎户星空",
-    "description": "猎户星空推出的豹小秘2是一款高性能AI语音交互服务机器人..."
+    "name": "云帆智能交互机器人-AI讲解员",
+    "manufacturer": "云迹科技",
+    "description": "云帆智能交互机器人-AI讲解员，由云迹科技精心打造，是一款集"看、听、说、走"于一体的智能机器人。其身高1465mm，直径560mm，重85kg。装备800万像素前后双摄像头，续航长达8-9小时，充电仅需6小时，支持4G/wifi2.4G/蓝牙4.0通讯。具备多感知系统、自动回充、全时交互、双屏交互等功能，适用于展厅展馆、服务大厅、银行、4S店、售楼处、商场、奢侈品专卖店等多种场景，提供自动化服务、智能物联等便捷功能。"
   },
   "parameters": {
-    "整机尺寸": {
-      "value": {
-        "length": 558,
-        "width": 525,
-        "height": 1350
-      },
+    "外形高度": {
+      "value": 1465,
       "unit": "mm"
     },
-    // 其他参数...
+    "外形直径": {
+      "value": 560,
+      "unit": "mm"
+    },
+    "重量": {
+      "value": 85,
+      "unit": "kg"
+    },
+    "前后双摄像头像素": "800万防逆光摄像头",
+    "最大爬坡角度": {
+      "value": 8,
+      "unit": "度"
+    },
+    "正常速度": {
+      "value": {
+        "min": 0.5,
+        "max": 0.8
+      },
+      "unit": "m/s"
+    },
+    "充电/续航时间": {
+      "value": {
+        "charge": 6,
+        "run": {
+          "min": 8,
+          "max": 9
+        }
+      },
+      "unit": "h"
+    }
   },
   "functions": {
-    "interaction": [
-      "智能咨询",
-      "迎宾接待",
-      "问路引领"
+    "perception": [
+      "多感知系统"
     ],
-    // 其他功能...
+    "execution": [
+      "可执行动作",
+      "自动回充"
+    ],
+    "interaction": [
+      "全时交互",
+      "双屏交互",
+      "问答库支持自定义"
+    ],
+    "navigation": [
+      "依托自主研发底盘技术",
+      "多场景应用"
+    ]
   },
   "scenes": [
-    "政务讲解员",
-    "企业讲解员"
-    // 其他场景...
-  ]
+    "展厅展馆",
+    "服务大厅",
+    "银行",
+    "4S店",
+    "售楼处",
+    "商场"
+  ],
+  "file_id": "product_0001"
 }
+```
+### Service Robot Module Example
+```json
 {
   "basic_info": {
-    "name": "数字扬声器模块",
+    "name": "Mecabot X Nano 自主移动机器人（AMR）平台",
     "manufacturer": "Unknown",
-    "description": "数字扬声器模块，适用于2.0-5.5V电压范围..."
+    "description": "Mecabot X Nano，一款专为室内服务设计的自主移动机器人（AMR）平台，由知名制造商打造。该平台搭载ROS控制器Jetson Nano，并配备Orbbec深度相机和Leishen激光雷达，确保精准感知。采用152mm直径的万向节麦卡诺轮，100W伺服功率，电池续航达3.5小时（无负载），最大负载60kg。具备感知、执行、交互和导航功能，适用于工厂、仓库、医院等室内环境，并支持快速原型设计和产品开发，可直接发货至目标市场。"
   },
   "parameters": {
-    "工作电压": {
-      "value": {
-        "min": 2.0,
-        "max": 5.5
-      },
-      "unit": "V"
+    "ROS控制器": "Jetson Nano",
+    "深度相机": "Orbbec",
+    "激光雷达": "Leishen",
+    "万向节麦卡诺轮直径": {
+      "value": 152,
+      "unit": "mm"
     },
-    // 其他参数...
+    "伺服功率": {
+      "value": 100,
+      "unit": "W"
+    },
+    "电池寿命": {
+      "value": {
+        "no_load": 3.5,
+        "unit": "小时",
+        "load_3kg": 2.8
+      }
+    },
+    "最大负载": {
+      "value": 60,
+      "unit": "kg"
+    }
   },
   "functions": {
+    "perception": [
+      "内置激光雷达",
+      "内置深度相机"
+    ],
     "execution": [
-      "可用作蜂鸣器",
-      "播放高质量音频"
+      "STM32电机/电源/IMU",
+      "金属底盘，配备4个麦卡诺轮和独立悬挂系统"
+    ],
+    "interaction": [
+      "可添加机器人臂、语音识别模块、LCD屏幕和外部键盘"
+    ],
+    "navigation": [
+      "灵活导航于较小的室内环境",
+      "万向节轮允许在任意方向移动"
     ]
-  }
+  },
+  "scenes": [
+    "工厂",
+    "仓库",
+    "医院",
+    "公共交通",
+    "办公楼",
+    "酒店",
+    "餐厅"
+  ],
+  "file_id": "module_0003"
 }
 ```
 
